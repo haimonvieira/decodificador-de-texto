@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Decodificador de texto</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <header class="cabecalho">
+      <img class="logo-alura" src="images/Frame 6.svg" alt="" />
+    </header>
+    <main class="apresentacao">
+      <section class="apresentacao__conteudo">
+        <div class="apresentacao__conteudo__area-texto">
+          <div class="apresentacao__conteudo__texto">
+            <textarea
+              class="inserir-texto"
+              placeholder="Insira seu texto aqui..."
+            ></textarea>
+          </div>
+
+          <p class="warning">Apenas letras minúsculas e sem acento.</p>
+
+          <div class="botoes-codificar-decodificar">
+            <button onclick="codificarMensagem()" class="botao-codificar">
+              Codificar
+            </button>
+            <button onclick="decodificarMensagem()" class="botao-decodificar">
+              Decodificar
+            </button>
+          </div>
+        </div>
+
+        <div class="apresentacao__conteudo__mensagem">
+          <img
+            class="imagem-nenhuma-mensagem"
+            src="images/High quality products 1 1.svg"
+            alt=""
+          />
+
+          <div class="texto-imagem">
+            <h2>Nenhuma mensagem encontrada</h2>
+            <p>
+              Digite um texto que você deseja criptografar ou descriptografar.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="rodape"></footer>
+  </body>
+</html>
