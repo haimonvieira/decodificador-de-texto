@@ -10,6 +10,10 @@
   <body>
     <header class="cabecalho">
       <img class="logo-alura" src="images/Frame 6.svg" alt="" />
+
+      <button class="modo-toggle" onclick="alternarModoEscuro()">
+        <div class="bola"></div>
+      </button>
     </header>
     <main class="apresentacao">
       <section class="apresentacao__conteudo">
@@ -21,7 +25,9 @@
             ></textarea>
           </div>
 
-          <p class="warning">Apenas letras minúsculas e sem acento.</p>
+          <p class="warning">
+            Apenas letras minúsculas e sem caracteres especiais.
+          </p>
 
           <div class="botoes-codificar-decodificar">
             <button onclick="codificarMensagem()" class="botao-codificar">
@@ -41,10 +47,12 @@
           />
 
           <div class="texto-imagem">
-            <h2>Nenhuma mensagem encontrada</h2>
-            <p>
+            <h2 class="texto-imagem-subtitulo">Nenhuma mensagem encontrada</h2>
+            <p class="texto-imagem-paragrafo">
               Digite um texto que você deseja criptografar ou descriptografar.
             </p>
+            <textarea class="texto-codificado-decodificado"></textarea>
+            <button class="botao-copiar">Copiar</button>
           </div>
         </div>
       </section>
