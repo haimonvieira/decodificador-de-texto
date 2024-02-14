@@ -156,6 +156,7 @@ button{
 }
 .texto-codificado-decodificado[disabled]{
     background-color: transparent;
+    color: black;
 }
 .inserir-texto{
     font-family: monospace;
