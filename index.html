@@ -16,6 +16,8 @@
       </button>
     </header>
     <main class="apresentacao">
+      <div class="texto-copiado">Texto copiado!</div>
+
       <section class="apresentacao__conteudo">
         <div class="apresentacao__conteudo__area-texto">
           <div class="apresentacao__conteudo__texto">
@@ -51,8 +53,8 @@
             <p class="texto-imagem-paragrafo">
               Digite um texto que você deseja criptografar ou descriptografar.
             </p>
-            <textarea class="texto-codificado-decodificado"></textarea>
-            <button class="botao-copiar">Copiar</button>
+            <textarea class="texto-codificado-decodificado" disabled></textarea>
+            <button class="botao-copiar" onclick="copiarTexto()">Copiar</button>
           </div>
         </div>
       </section>

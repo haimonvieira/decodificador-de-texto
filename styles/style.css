@@ -25,6 +25,24 @@ button{
     font-size: 18px;
     font-family: 'Inter', sans-serif;
 }
+.texto-copiado{
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    position: fixed;
+    padding: 1%;
+    left: 0%;
+    transition: left 0.5s ease;
+    transform: translate(-100%, 50%);
+    display: flex;
+    background-color: #0A3871;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+}
+.texto-copiado.mostrar {
+    margin-left: 12%;
+    transition: 0.5s;
+  }
 .cabecalho{
     display: flex;
     position: fixed;
@@ -136,6 +154,9 @@ button{
     font-size: 1.5rem;
     display: none;
 }
+.texto-codificado-decodificado[disabled]{
+    background-color: transparent;
+}
 .inserir-texto{
     font-family: monospace;
     font-size: 30px;
@@ -211,9 +232,17 @@ body .modo-escuro .modo-toggle .bola {
     background-color: #fff;
 }
 
+@media (max-width: 1024px){
+    .texto-copiado.mostrar{
+        margin-left: 15%;
+    }
+}
+
 @media (max-width: 768px) {
     .cabecalho{
         position: relative;
+        justify-content: space-between;
+        padding: 5% 5% 2% 2%;
     }
     .apresentacao__conteudo{
         flex-direction: column;
@@ -228,6 +257,12 @@ body .modo-escuro .modo-toggle .bola {
     .botao-copiar{
         width: 100%;
         height: 50%;
+    }
+    .texto-copiado.mostrar{
+        margin-left: 0%;
+    }
+    .texto-copiado.mostrar{
+        margin-left: 20%;
     }
 
 }
@@ -247,12 +282,16 @@ body .modo-escuro .modo-toggle .bola {
         padding: 4%;
     }
 }
-@media (max-width: 375px){
-    .cabecalho{
-        display: flex;
-        justify-content: space-between;
-        padding: 5% 5% 2% 2%;
+@media (max-width: 425px){
+    .apresentacao__conteudo__mensagem{
+        width: 80%;
     }
+    .texto-copiado.mostrar{
+        margin-left: 40%;
+    }
+    
+}
+@media (max-width: 375px){
     .apresentacao__conteudo{
         width: 90%;
     }
@@ -267,5 +306,8 @@ body .modo-escuro .modo-toggle .bola {
     }
     button{
         width: 200px;
+    }
+    .texto-copiado.mostrar{
+        margin-left: 40%;
     }
 }

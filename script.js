@@ -185,6 +185,31 @@ function decodificarMensagem(){
     
 }
 
+function copiarTexto() {
+    let textarea = document.querySelector('.texto-codificado-decodificado');
+    textarea.select();
+
+    navigator.clipboard.writeText(textarea.value)
+        .then(() => {
+
+            let mensagemCopia = document.querySelector('.texto-copiado');
+            mensagemCopia.classList.add('mostrar');
+
+            // Remove a classe após algum tempo (tempo da transição)
+            setTimeout(() => {
+                mensagemCopia.classList.remove('mostrar');
+            }, 2000); // 2000 milissegundos = 2 segundos
+
+            // Deseleciona o texto
+            window.getSelection().removeAllRanges();
+
+
+        })
+        
+    window.getSelection().removeAllRanges();
+}
+
+
 function mostrarOcultarElementos() {
 
     let campoMensagem = document.querySelector('.inserir-texto');
