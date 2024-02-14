@@ -8,6 +8,7 @@
 let chave = {'a': 'ai', 'e': 'enter', 'i': 'imes', 'o': 'ober', 'u': 'ufat'};
 let chaveInvertida = {};
 
+
 for (let [key, value] of Object.entries(chave)) {
     chaveInvertida[value] = key;
 }
@@ -34,13 +35,13 @@ function modificarElementos(){
     if(corpo.classList.contains('modo-escuro')){
 
         aviso.style.color = 'white';
-        aviso.style.fontSize = '18px';
+        aviso.style.fontSize = '1.1rem';
         aviso.innerText = 'Apenas letras minúsculas e sem caracteres especiais.';
 
     }else{
 
         aviso.style.color = 'black';
-        aviso.style.fontSize = '18px';
+        aviso.style.fontSize = '1.1rem';
         aviso.innerText = 'Apenas letras minúsculas e sem caracteres especiais.';
 
     }
@@ -49,37 +50,45 @@ function modificarElementos(){
 
 function redefinirElementos(){
 
+    let tamanhoTela = window.innerWidth;
+    let apresentacaoConteudoMensagem = document.querySelector('.apresentacao__conteudo__mensagem');
     let textoCodificadoDecodificado = document.querySelector('.texto-codificado-decodificado');
-    textoCodificadoDecodificado.style.display = 'none';
-
     let imagem = document.querySelector('.imagem-nenhuma-mensagem');
-    imagem.style.display = 'block';
-
     let subtitulo = document.querySelector('.texto-imagem-subtitulo');
-    subtitulo.style.display = 'block';
-
     let paragrafoTexto = document.querySelector('.texto-imagem-paragrafo');
-    paragrafoTexto.style.display = 'block';
-
     let botaoCopiar = document.querySelector('.botao-copiar');
-    botaoCopiar.style.display = 'none';
-
     let aviso = document.querySelector('.warning');
     let corpo = document.body;
+
+
+    if(tamanhoTela <= 768){
+        apresentacaoConteudoMensagem.style.height = 'auto';
+        textoCodificadoDecodificado.style.display = 'none';
+        imagem.style.display = 'none';
+        subtitulo.style.display = 'block';
+        paragrafoTexto.style.display = 'block';
+        botaoCopiar.style.display = 'none';
+    }else{
+        apresentacaoConteudoMensagem.removeAttribute('style');
+        textoCodificadoDecodificado.style.display = 'none';
+        imagem.style.display = 'block';
+        subtitulo.style.display = 'block';
+        paragrafoTexto.style.display = 'block';
+        botaoCopiar.style.display = 'none';
+    }
+    
 
     if(corpo.classList.contains('modo-escuro')){
 
         aviso.style.color = 'white';
-        aviso.style.fontSize = '18px';
+        aviso.style.fontSize = '1.1rem';
 
     }else{
 
         aviso.style.color = 'black';
-        aviso.style.fontSize = '18px';
+        aviso.style.fontSize = '1.1rem';
 
     }
-
-    
 
 
 
@@ -87,6 +96,8 @@ function redefinirElementos(){
 
 function codificarMensagem(){
 
+    let tamanhoTela = window.innerWidth;
+    let apresentacaoConteudoMensagem = document.querySelector('.apresentacao__conteudo__mensagem');
     let textoCodificadoDecodificado = document.querySelector('.texto-codificado-decodificado');
     let mensagemOriginal = document.querySelector('.inserir-texto');
     let texto = mensagemOriginal.value;
@@ -94,6 +105,11 @@ function codificarMensagem(){
 
     if(texto.trim() !== ''){
 
+        if(tamanhoTela <= 768 && tamanhoTela > 375){
+            apresentacaoConteudoMensagem.style.height = '200px';
+        }else if (tamanhoTela <= 375){
+            apresentacaoConteudoMensagem.style.height = '300px';
+        }
         if(/^[a-z\s]+$/.test(texto) && !/[^\x20-\x7E]/.test(texto)){
             modificarElementos();
 
@@ -110,7 +126,7 @@ function codificarMensagem(){
         }else{
             
             aviso.style.color = 'red';
-            aviso.style.fontSize = '24px';
+            aviso.style.fontSize = '1.5rem';
             
 
         }
@@ -118,7 +134,7 @@ function codificarMensagem(){
     }else{
         redefinirElementos();
         aviso.style.color = 'red';
-        aviso.style.fontSize = '24px';
+        aviso.style.fontSize = '1.5rem';
         aviso.innerText = 'Insira um texto para codificar ou decodificar.';
     }
 
@@ -126,12 +142,20 @@ function codificarMensagem(){
 
 function decodificarMensagem(){
     
+    let tamanhoTela = window.innerWidth;
+    let apresentacaoConteudoMensagem = document.querySelector('.apresentacao__conteudo__mensagem');
     let textoCodificadoDecodificado = document.querySelector('.texto-codificado-decodificado');
     let mensagemCodificada = document.querySelector('.inserir-texto');
     let texto = mensagemCodificada.value;
     let aviso = document.querySelector('.warning');
 
     if(texto.trim() !== ''){
+
+        if(tamanhoTela <= 768 && tamanhoTela > 375){
+            apresentacaoConteudoMensagem.style.height = '200px';
+        }else if (tamanhoTela <= 375){
+            apresentacaoConteudoMensagem.style.height = '300px';
+        }
 
         if(/^[a-z\s]+$/.test(texto) && !/[^\x20-\x7E]/.test(texto)){
 
@@ -147,14 +171,14 @@ function decodificarMensagem(){
         }else{
             let aviso = document.querySelector('.warning');
             aviso.style.color = 'red';
-            aviso.style.fontSize = '24px';
+            aviso.style.fontSize = '1.5rem';
         }
 
         
     }else{
         redefinirElementos();
         aviso.style.color = 'red';
-        aviso.style.fontSize = '24px';
+        aviso.style.fontSize = '1.5rem';
         aviso.innerText = 'Insira um texto para codificar ou decodificar.';
     }
 
