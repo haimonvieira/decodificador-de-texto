@@ -231,6 +231,22 @@ body .modo-escuro .modo-toggle .bola {
     }
 
 }
+@media (max-width: 700px){
+    button{
+        width: 200px;
+    }
+}
+@media (max-width: 400px){
+    button{
+        width: 175px;
+    }
+    .apresentacao__conteudo__mensagem{
+        width: 80%;
+    }
+    .apresentacao__conteudo__texto{
+        padding: 4%;
+    }
+}
 @media (max-width: 375px){
     .cabecalho{
         display: flex;
@@ -248,5 +264,8 @@ body .modo-escuro .modo-toggle .bola {
     }
     .botoes-codificar-decodificar{
         flex-direction: column;
+    }
+    button{
+        width: 200px;
     }
 }
