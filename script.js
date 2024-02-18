@@ -222,12 +222,4 @@ function mostrarOcultarElementos() {
 let areaTexto = document.querySelector('.inserir-texto');
 areaTexto.addEventListener('input', mostrarOcultarElementos);
 
-function alternarModoEscuro() {
-    let corpo = document.body;
-    corpo.classList.toggle('modo-escuro');
-
-    let bola = document.querySelector('.bola');
-    bola.classList.toggle('bola-modo-escuro');
-}
-
 

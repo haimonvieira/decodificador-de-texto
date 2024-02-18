@@ -185,54 +185,6 @@ button{
     }
 }
 
-
-/* Modo escuro */
-body.modo-escuro .texto-imagem {
-    color: black;
-}
-body.modo-escuro .botao-decodificar:hover{
-    background-color: rgba(255, 255, 255, 0.7);
-}
-.modo-toggle {
-    background-color: #ddd;
-    height: 40px;
-    width: 80px;
-    border: none;
-    padding: 5px;
-    cursor: pointer;
-}
-
-.bola {
-    width: 30px;
-    height: 30px;
-    background-color: #555;
-    border-radius: 50%;
-    transition: transform 0.3s ease;
-}
-
-body.modo-escuro {
-    background-color: #333;
-    color: #fff;
-}
-body.modo-escuro .texto-imagem-subtitulo .texto-imagem-paragrafo{
-    color: black;
-}
-body.modo-escuro .modo-toggle .bola {
-    transform: translateX(40px);
-}
-
-body .modo-escuro .modo-toggle {
-    background-color: #555;
-}
-
-body .modo-escuro .modo-toggle .bola {
-    transform: translateX(20px);
-}
-
-.modo-escuro .bola-modo-escuro {
-    background-color: #fff;
-}
-
 @media (max-width: 1024px){
     .texto-copiado.mostrar{
         margin-left: 15%;
